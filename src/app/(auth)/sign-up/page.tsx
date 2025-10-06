@@ -2,11 +2,12 @@
 
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Button } from '../../../components/ui/button'
-import InputField from '../../../components/forms/InputField'
-import SelectField from '../../../components/forms/SelectField'
+import { Button } from '@/components/ui/button'
+import InputField from '@/components/forms/InputField'
+import SelectField from '@/components/forms/SelectField'
 import {CountrySelectField} from '@/components/forms/CountrySelectField'
-import { INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS } from '../../../lib/constants'
+import { INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS } from '@/lib/constants'
+import FooterLink from '@/components/forms/FooterLink'
 
 const SignUp = () => {
 
@@ -17,6 +18,7 @@ const SignUp = () => {
       , mode: 'onBlur'
     }
   )
+  
   const onSubmit = async (data: SignUpFormData) => {
     try {
       // Handle form submission logic here
@@ -63,7 +65,7 @@ const SignUp = () => {
           label="Country"
           control={control}
           error={errors.country}
-          required={true}
+          required
         />
 
         <SelectField
@@ -98,6 +100,8 @@ const SignUp = () => {
           {isSubmitting ? 'Creating Account...' : 'Start your Investing Journey'}
 
         </Button>
+
+        <FooterLink text='Already have an account?' linkText='Create an account' href='/sign-in' />
       </form>
     </>
   )
