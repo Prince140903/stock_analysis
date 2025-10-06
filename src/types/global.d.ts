@@ -47,7 +47,7 @@ declare global {
         control: Control;
         error?: FieldError;
         required?: boolean;
-        validation: RegisterOptions;
+        validation?: RegisterOptions;
     };
 
     type FooterLinkProps = {

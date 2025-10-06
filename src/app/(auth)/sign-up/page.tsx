@@ -18,7 +18,7 @@ const SignUp = () => {
       , mode: 'onBlur'
     }
   )
-
+  
   const onSubmit = async (data: SignUpFormData) => {
     try {
       // Handle form submission logic here
